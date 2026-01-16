@@ -1,0 +1,799 @@
+/* natural box model */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* UTILITIES */
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+/* no break */
+.nobr {
+  white-space: nowrap;
+}
+
+/* PAGE THEME COLORS*/
+:root {
+  --orange: #FABB92;
+  --yellow: #FFCA8C;
+  --green: #A4BDA8;
+  --pink: #EBA5A5;
+  --lightpink: #F5CEC7;
+}
+
+/* START STYLES HERE */
+body {
+  background: rgb(251, 246, 236);
+}
+
+h1 {
+  font-family: "Chewy", serif;
+  color: var(--green);
+}
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--orange);
+}
+
+h3 {
+  font-family: 'Times New Roman', Times, serif;
+  color: gray;
+  font-size: 20px;
+  margin-top: 2.0rem;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* NAVIGATION */
+/*  Borrowed from Horizontal Navbar with Flexbox STARTER from class and edited*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fbf6ec;
+  padding: 1.3rem;
+  box-shadow: 0 2px 5px rgba(128, 128, 128, 0.3);
+  z-index: 200;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.0rem;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo */
+nav img {
+  height: 100px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 24px;
+  color: gray;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+a:hover {
+  color: var(--orange);
+}
+
+li {
+  list-style-type: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.items {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.0rem;
+}
+
+menu-button {
+  background-color: transparent;
+  border: 2px solid gray;
+  border-radius: 6px;
+  padding: 0.3em 0.6em;
+  transition: all .2s ease-in-out;
+}
+
+menu-button:hover {
+  cursor: pointer;
+  color: var(--orange)
+}
+
+.active {
+  color: var(--green);
+}
+
+/* *******Home******** */
+main {
+  padding: 6.0rem;
+  margin: 100px auto 50px;
+  max-width: 1500px;
+  background: #fbf6ec;
+}
+
+/* Photo and Bio */
+.me {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+}
+
+.me img {
+  border: solid 10px var(--orange);
+  max-width: 400px;
+  border-radius: 15px;
+
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.about-me h1 {
+  font-family: "Chewy", serif;
+  font-size: 70px;
+  color: #A4BDA8;
+  margin: 0 auto;
+}
+
+.about-me p {
+  color: gray;
+  font-size: 18px;
+}
+
+.button {
+  background-color: var(--pink);
+  border: 3px solid var(--pink);
+  border-radius: 20px;
+  color: #fbf6ec;
+  padding: 0.5em 1.0em;
+  margin: 1.0em 2.0em 0 0;
+  display: inline-block;
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: background-color .2s ease-out, color .2s ease-out, border-color .18s ease-out;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: var(--pink);
+}
+
+/* Recent work */
+.recent-work h2 {
+  text-align: center;
+  font-size: 30px;
+  color: var(--orange);
+  padding-top: 6.0rem;
+}
+
+.recent-work img {
+  border: solid 5px #fbf6ec;
+  border-radius: 15px;
+  margin: 1.0rem auto;
+  max-width: 300px;
+  height: 100%;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  transition: transform .3s ease, filter .3s ease;
+}
+
+.recentworkimgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.recent-work img:hover {
+  transform: scale(1.04);
+  filter: brightness(0.7);
+}
+
+/* ********Resume******** */
+.heading {
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 50px;
+}
+
+.heading h2 {
+  font-size: 30px;
+}
+
+.pdf-viewer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.pdf-frame {
+    width: 100%;
+    height: 85vh;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+.pdf-download {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.pdf-download a {
+    text-decoration: none;
+    color: #fbf6ec;
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+.pdf-download a:hover {
+    background: transparent;
+}
+
+
+/* *********Contact******** */
+h3 {
+  color: gray;
+  font-size: 20px;
+}
+
+address {
+  color: gray;
+  padding-left: 1.0rem;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contactme a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  padding-left: 1.0rem;
+  font-size: 18px;
+}
+
+.icon {
+  padding-left: 1.0rem;
+  color: grey;
+}
+
+/* *****Projects****** */
+.heading {
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 50px;
+}
+
+.heading h2 {
+  font-size: 30px;
+}
+
+.tile {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 3.0rem auto;
+  height: 350px;
+  border: solid 5px rgb(251, 246, 236);
+}
+
+/* GRID LAYOUT */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* TILE BASE */
+.tile {
+  position: relative;
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  display: flex;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  align-items: center;
+  justify-content: center;
+  transition: transform .3s ease, filter .3s ease;
+}
+
+/* TEXT ON TOP */
+.tile .label {
+  position: absolute;
+  color: rgb(251, 246, 236);
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px black;
+  z-index: 2;
+}
+
+.tile:hover {
+  transform: scale(1.04);
+  filter: brightness(0.7);
+}
+
+.illustrator {
+  background-image: url("../images/Yellow.png");
+}
+
+.indesign {
+  background-image: url("../images/Green.png");
+}
+
+.canva {
+  background-image: url("../images/Pink.png");
+}
+
+.figma {
+  background-image: url("../images/Orange.png");
+}
+
+
+/* illustrator Page */
+/* ----- GALLERY CONTAINER ----- */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 340px);
+  justify-content: center; 
+  gap: 24px;
+  padding: 20px;
+}
+
+/* ----- GALLERY CARD ----- */
+.gallery-card {
+  width: 340px;
+  background: #fafafa;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----- IMAGE (11x17 ratio) ----- */
+.gallery-card img {
+  width: 100%;
+  aspect-ratio: 11 / 17;
+  object-fit: contain;
+  background: #fafafa;
+}
+
+/* ----- TEXT ----- */
+.gallery-text {
+  padding: 15px;
+  text-align: center;
+}
+
+.gallery-text h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.gallery-text p {
+  color: grey;
+  margin: 0;
+}
+
+.spread {
+  color: #EBA5A5;
+  margin: 0;
+}
+
+
+/* InDesign Page */
+/* Type Book Carousel */
+
+.indesign-works {
+  grid-column: span 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background: #fafafa;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.type-speciman-book {
+  padding: 1.0rem;
+  margin: 0 auto;
+  /* margin-bottom: 1.0rem; */
+  margin: 0;
+}
+
+
+
+
+/* Canva Page */
+.canva-works {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.canva-works h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.canva-works h2 {
+  color: rgb(251, 246, 236);
+  font-size: 30px;
+}
+
+.canva-works p {
+  color: gray;
+  font-size: 24px;
+}
+
+.HC-Socials {
+  background-color: var(--orange);
+  padding: 3.0rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 3.0rem;
+}
+
+.HC-Socials img {
+  height: 400px
+}
+
+.page-layout {
+  background-color: var(--pink);
+  padding: 3.0rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 3.0rem;
+}
+
+.page-layout img {
+  height: 400px
+}
+
+.Chili-Cook-Off-Flyer {
+  background-color: var(--green);
+  padding: 3.0rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 3.0rem;
+}
+
+.Chili-Cook-Off-Flyer img {
+  height: 400px;
+}
+
+.Grad-Invitation {
+  background-color: var(--orange);
+  padding: 3.0rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.Grad-Invitation img {
+  height: 400px;
+}
+
+/* Figma Page */
+.figma-works {
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background: #fafafa;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.wine-app {
+  padding: 1.0rem;
+  margin: 0 auto;
+  margin: 0;
+  width: 340px;
+  height: 100%;
+}
+
+/* ******footer****** */
+
+footer {
+  background-color: var(--pink);
+  color: #fbf6ec !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+h4, h5 {
+  font-family: "Montserrat", sans-serif !important; 
+  font-weight: normal !important;
+  margin: 0.2rem 0;
+  color: #fbf6ec;
+}
+
+ 
+
+/* Media Queries Indicator */
+/* From Project 5 */
+#tag {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background-color: #CC0000;
+  z-index: 300;
+}
+
+
+/* MEDIA QUERIES FROM SMALLEST TO LARGEST = MOBILE FIRST */
+/* Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+   .about-me h1 {
+  margin-left: 0;
+  } 
+
+  .about-me {
+    max-width: 500px;
+  }
+
+  .recent-work img {
+    height: 350px;
+    margin: 1.0rem;
+  }
+
+
+  .left {
+    width: 55%;
+    padding-right: 3.0rem;
+  }
+
+  .right {
+    padding-left: 2.0rem;
+    width: 40%;
+    text-align: left;
+  }
+  .illustrator-works {
+    width: 450px;
+  }
+
+  .indesign-works {
+    width: 450px;
+  }
+
+  .canva-works {
+    width: 450px;
+  }
+
+  #tag {
+    background-color: #00AA88;
+  }
+
+  .tile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+  .about-me h1 {
+  margin-left: 0;
+}
+
+  .about-me {
+    max-width: 500px;
+  }
+
+  .left {
+    width: 50%;
+    padding-right: 3.0rem;
+  }
+
+  .right {
+    padding-left: 2.0rem;
+    width: 50%;
+    text-align: left;
+  }
+
+  .type-slideshow {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  .type-speciman-book img {
+    height: 300px;
+  }
+
+  .illustrator-works {
+    width: 600px;
+  }
+
+  .indesign-works {
+    width: 600px;
+  }
+
+  .canva-works {
+    width: 600px;
+  }
+
+ 
+
+  #tag {
+    background-color: #FF9900;
+  }
+
+  .tile-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+  .about-me h1 {
+  margin-left: 0;
+}
+
+  .about-me {
+    max-width: 425px;
+  }
+
+  .left {
+    width: 65%;
+    padding-right: 3.0rem;
+  }
+
+  .right {
+    padding-left: 2.0rem;
+    width: 30%;
+    text-align: left;
+  }
+
+  .type-slideshow {
+    width: 700px;
+    margin: 0 auto;
+  }
+
+  .type-speciman-book img {
+    height: 400px;
+  }
+
+  .illustrator-works {
+    width: 800px;
+  }
+
+  .indesign-works {
+    width: 800px;
+  }
+
+  .canva-works {
+    width: 800px;
+  }
+
+  
+
+  #tag {
+    background-color: #674EA7;
+  }
+
+  .tile-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  .about-me h1 {
+  margin-left: 0;
+}
+
+  .about-me {
+    padding-left: 2.0em;
+    max-width: 500px;
+  }
+
+  .me {
+    max-width: 1000px;
+  }
+
+  .left {
+    width: 65%;
+    padding-right: 3.0rem;
+  }
+
+  .right {
+    padding-left: 2.0rem;
+    width: 30%;
+    text-align: left;
+  }
+
+  .illustrator-works {
+    width: 1000px;
+  }
+
+  .canva-works {
+    width: 1000px;
+  }
+
+  
+
+  #tag {
+    background-color: #f6ff00;
+  }
+
+  .tile-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+}

@@ -46,7 +46,7 @@ html {
 
 /* START STYLES HERE */
 body {
-  background: rgb(251, 246, 236);
+  background: #fbf6ec;
 }
 
 h1 {
@@ -61,7 +61,7 @@ h2 {
 
 h3 {
   font-family: 'Times New Roman', Times, serif;
-  color: gray;
+  color: #808080;
   font-size: 20px;
   margin-top: 2.0rem;
 }
